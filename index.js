@@ -87,6 +87,10 @@ module.exports = (src, dest, options = {}) => {
 							});
 						}
 					})
+					.then(() => ({
+						from,
+						to
+					}))
 					.catch(err => {
 						throw new CpyError(`Cannot copy from \`${from}\` to \`${to}\`: ${err.message}`, err);
 					});
